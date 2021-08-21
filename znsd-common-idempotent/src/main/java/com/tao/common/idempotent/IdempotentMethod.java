@@ -1,4 +1,4 @@
-package idempotent;
+package com.tao.common.idempotent;
 
 import java.lang.annotation.*;
 

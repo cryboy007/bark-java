@@ -1,4 +1,4 @@
-package idempotent.constants;
+package com.tao.common.idempotent.constants;
 
 import com.tao.common.core.common.exception.ICode;
 import com.tao.common.core.utils.StringUtil;

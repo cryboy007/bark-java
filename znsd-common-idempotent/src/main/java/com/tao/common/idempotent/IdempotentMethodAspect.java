@@ -1,4 +1,4 @@
-package idempotent;
+package com.tao.common.idempotent;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

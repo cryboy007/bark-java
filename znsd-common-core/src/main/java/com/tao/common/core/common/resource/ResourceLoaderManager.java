@@ -1,9 +1,7 @@
 package com.tao.common.core.common.resource;
 
-import com.baison.e3plus.common.bscore.linq.ISelector;
-import com.baison.e3plus.common.bscore.linq.LinqUtil;
-import com.baison.e3plus.common.bscore.other.ServiceUtils;
-import com.baison.e3plus.common.bscore.utils.StringUtil;
+import com.tao.common.core.common.other.ServiceUtils;
+import com.tao.common.core.utils.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 扫描本地资源 配合ISupportResource接口使用 具体参考ISupportResource的各个函数说明
@@ -35,13 +34,10 @@ public class ResourceLoaderManager {
 		if (beanNames == null || beanNames.length == 0) {
 			supportResources = ServiceUtils.getBeans(ISupportResourceLoad.class);
 		} else {
-			supportResources = LinqUtil.select(Arrays.asList(beanNames), new ISelector<String, ISupportResourceLoad>() {
-
-				@Override
-				public ISupportResourceLoad select(String beanName) {
-					return null;
-				}
-			});
+			supportResources = Arrays.asList(beanNames).stream().map(beanName -> {
+				ISupportResourceLoad service = ServiceUtils.getService(beanName, ISupportResourceLoad.class);
+				return service;
+			}).collect(Collectors.toList());
 		}
 
 		Collections.sort(supportResources, new Comparator<ISupportResourceLoad>() {

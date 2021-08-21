@@ -1,6 +1,6 @@
-package idempotent.config;
+package com.tao.common.idempotent.config;
 
-import idempotent.IdempotentMethodAspect;
+import com.tao.common.idempotent.IdempotentMethodAspect;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;

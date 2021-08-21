@@ -1,8 +1,8 @@
 package com.tao.common.core.common.config;
 
-import com.baison.e3plus.common.bscore.keygen.SnowflakeKeyGenerator;
-import com.baison.e3plus.common.bscore.other.ServiceUtils;
-import com.baison.e3plus.common.bscore.utils.WorkerUtils;
+import com.tao.common.core.common.keygen.SnowflakeKeyGenerator;
+import com.tao.common.core.common.other.ServiceUtils;
+import com.tao.common.core.utils.WorkerUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

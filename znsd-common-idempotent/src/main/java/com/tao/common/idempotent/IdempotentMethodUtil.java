@@ -1,14 +1,14 @@
-package idempotent;
+package com.tao.common.idempotent;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.baison.e3plus.common.bscore.utils.KeyUtils;
-import com.baison.e3plus.common.bscore.utils.ObjectUtil;
-import com.baison.e3plus.common.bscore.utils.StringUtil;
-import com.baison.e3plus.common.cncore.common.FourTuple;
-import com.baison.e3plus.common.cncore.common.exception.BizCode;
-import com.baison.e3plus.common.cncore.common.exception.BizException;
-import com.baison.e3plus.common.idempotent.constants.IdemErrorCode;
+import com.tao.common.core.common.FourTuple;
+import com.tao.common.core.common.exception.BizCode;
+import com.tao.common.core.common.exception.BizException;
+import com.tao.common.core.utils.KeyUtils;
+import com.tao.common.core.utils.ObjectUtil;
+import com.tao.common.core.utils.StringUtil;
+import com.tao.common.idempotent.constants.IdemErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
