@@ -1,2 +1,2 @@
 # 前言
-这里放的是一些比较方便的工具,提高开发效率
+通过http请求实现bark消息推送,配置SmsConstant.BARK_URL即可
