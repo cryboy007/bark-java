@@ -7,11 +7,11 @@ import com.alibaba.excel.write.handler.AbstractRowWriteHandler;
 import com.alibaba.excel.write.metadata.holder.WriteSheetHolder;
 import com.alibaba.excel.write.metadata.holder.WriteTableHolder;
 
-public class E3plusCellWriteHandler extends AbstractRowWriteHandler {
+public class DefaultCellWriteHandler extends AbstractRowWriteHandler {
 
 	private Class<?> clazz;
 
-	public E3plusCellWriteHandler(Class<?> clazz) {
+	public DefaultCellWriteHandler(Class<?> clazz) {
 		this.clazz = clazz;
 	}
 

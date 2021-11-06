@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>com.tao</groupId>
+    <artifactId>znsd-common-dependencies</artifactId>
+    <version>3.0.12</version>
+    <packaging>pom</packaging>
+    <name>znsd-common-dependencies</name>
+    <description>znsd dependencies</description>
+    <modelVersion>4.0.0</modelVersion>
+
+
+
+    <properties>
+        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+        <!-- Dependency Versions -->
+        <spring.boot.version>2.1.5.RELEASE</spring.boot.version>
+        <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
+        <alibaba.cloud.version>2.1.0.RELEASE</alibaba.cloud.version>
+        <alibaba-nacos.version>2.1.1.RELEASE</alibaba-nacos.version>
+        <alibaba.druid.version>1.1.0</alibaba.druid.version>
+
+        <swagger2.version>2.9.2</swagger2.version>
+        <liquibase.version>3.6.2</liquibase.version>
+
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring dependency -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring-cloud-alibaba-dependencies -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 增加nacos discovery -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${alibaba-nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${alibaba-nacos.version}</version>
+            </dependency>
+
+            <!-- other dependency -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${alibaba.druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <distributionManagement>
+        <repository>
+            <!--id的名字可以任意取，但是在setting文件中的属性<server>的ID与这里一致-->
+            <id>releases</id>
+            <!--指向仓库类型为host(宿主仓库）的储存类型为Release的仓库-->
+            <url>http://192.168.56.10:8081/repository/java-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <!--指向仓库类型为host(宿主仓库）的储存类型为Snapshot的仓库-->
+            <url>http://192.168.56.10:8081/repository/java-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

@@ -8,12 +8,12 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.read.metadata.holder.ReadRowHolder;
 
-public class E3plusImportListener<T> extends AnalysisEventListener<T> {
+public class DefaultImportListener<T> extends AnalysisEventListener<T> {
 
 	private ImportHelper<T> helper;
 	private List<T> datas = new ArrayList<>();
 
-	public E3plusImportListener(ImportHelper<T> helper) {
+	public DefaultImportListener(ImportHelper<T> helper) {
 		this.helper = helper;
 	}
 

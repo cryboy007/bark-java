@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 
-import com.tao.common.excel.listener.E3plusImportListener;
+import com.tao.common.excel.listener.DefaultImportListener;
 import com.tao.common.excel.model.excelimport.ExcelField;
 import com.tao.common.excel.service.IExcelImportService;
 import com.tao.common.excel.utils.ExcelImportUtil;
@@ -137,8 +137,8 @@ public abstract class AbstractImportController<T extends BaseImportDto, A extend
 	 * @param fields   单据字段
 	 * @return
 	 */
-	private E3plusImportListener<T> getListener(int checkRow, Class<T> clazz, ExcelField[] fields) {
-		return new E3plusImportListener<T>(new E3plusImportListener.ImportHelper<T>() {
+	private DefaultImportListener<T> getListener(int checkRow, Class<T> clazz, ExcelField[] fields) {
+		return new DefaultImportListener<T>(new DefaultImportListener.ImportHelper<T>() {
 
 			/** 是否存在异常标识 */
 			private boolean hasError = false;

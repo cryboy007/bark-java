@@ -35,7 +35,7 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyun.openservices.shade.com.alibaba.fastjson.JSON;
-import com.tao.common.excel.listener.E3plusCellWriteHandler;
+import com.tao.common.excel.listener.DefaultCellWriteHandler;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -74,7 +74,7 @@ public class ExcelImportUtil {
 				.relativeHeadRowIndex(2).useDefaultStyle(false);
 		List<String> columns = getColumns(clazz);
 		writerSheet.needHead(Boolean.FALSE).includeColumnFiledNames(columns)
-				.registerWriteHandler(new E3plusCellWriteHandler(clazz)).doWrite(data);
+				.registerWriteHandler(new DefaultCellWriteHandler(clazz)).doWrite(data);
 
 	}
 

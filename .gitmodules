@@ -1,0 +1,3 @@
+[submodule "znsd-common-sms/bark-java"]
+	path = znsd-common-sms/bark-java
+	url = https://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@github.com/cryboy007/bark-java.git
